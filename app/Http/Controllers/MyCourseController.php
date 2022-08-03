@@ -126,4 +126,21 @@ class MyCourseController extends Controller
     {
         //
     }
+
+    /**
+     * Create premium access to user.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function createPremiumAccess(Request $request)
+    {
+        $data = $request->all();
+        $myCourse = MyCourse::create($data);
+
+        return response()->json([
+            "status" => "success",
+            "data" => $myCourse
+        ]);
+    }
 }
