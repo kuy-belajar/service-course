@@ -2,6 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MentorController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\LessonController;
+use App\Http\Controllers\ImageCourseController;
+use App\Http\Controllers\MyCourseController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +48,8 @@ Route::delete("lessons/{id}", "LessonController@destroy");
 Route::post("image-courses", "ImageCourseController@store");
 Route::delete("image-courses/{id}", "ImageCourseController@destroy");
 
-Route::post("my-courses", "ImageCourseController@store");
-Route::get("my-courses", "ImageCourseController@index");
+Route::post("my-courses", "MyCourseController@store");
+Route::get("my-courses", "MyCourseController@index");
 
 Route::post("reviews", "ReviewController@store");
 Route::put("reviews", "ReviewController@update");
