@@ -14,6 +14,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get("mentors", "MentorController@index");
+Route::get("mentors/{id}", "MentorController@show");
+Route::post("mentors", "MentorController@store");
+Route::put("mentors/{id}", "MentorController@update");
+Route::delete("mentors/{id}", "MentorController@destroy");
+
+Route::get("courses", "CourseController@index");
+Route::get("courses/{id}", "CourseController@show");
+Route::post("courses", "CourseController@store");
+Route::put("courses/{id}", "CourseController@update");
+Route::delete("courses/{id}", "CourseController@destroy");
+
+Route::get("chapters", "ChapterController@index");
+Route::get("chapters/{id}", "ChapterController@show");
+Route::post("chapters", "ChapterController@store");
+Route::put("chapters/{id}", "ChapterController@update");
+Route::delete("chapters/{id}", "ChapterController@destroy");
+
+Route::get("lessons", "LessonController@index");
+Route::get("lessons/{id}", "LessonController@show");
+Route::post("lessons", "LessonController@store");
+Route::put("lessons/{id}", "LessonController@update");
+Route::delete("lessons/{id}", "LessonController@destroy");
+
+Route::post("image-courses", "ImageCourseController@store");
+Route::delete("image-courses/{id}", "ImageCourseController@destroy");
+
+Route::post("my-courses", "ImageCourseController@store");
+Route::get("my-courses", "ImageCourseController@index");
+
+Route::post("reviews", "ReviewController@store");
+Route::put("reviews", "ReviewController@update");
+Route::delete("reviews", "ReviewController@destroy");
